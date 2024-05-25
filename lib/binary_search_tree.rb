@@ -91,6 +91,15 @@ class BinarySeachTree
     vals unless block_given?
   end
 
+  def height(node = root)
+    return -1 if node.nil?
+
+    left_height = height(node.left)
+    right_height = height(node.right)
+
+    [left_height, right_height].max + 1
+  end
+
   private
 
   attr_writer :root
