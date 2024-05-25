@@ -20,6 +20,28 @@ class BinarySeachTree
     end
   end
 
+  def delete(val, node = root)
+    return nil if node.nil?
+
+    if val < node.val
+      node.left = delete(val, node.left)
+    elsif val > node.val
+      node.right = delete(val, node.right)
+    else
+      if node.left.nil?
+        return node.right
+      elsif node.right.nil?
+        return node.left
+      end
+
+      nearest_leaf = node.right
+      nearest_leaf = nearest_leaf.left until nearest_leaf.left.nil?
+      node.val = nearest_leaf.val
+      node.right = delete(node.val, node.right)
+    end
+    node
+  end
+
   private
 
   attr_writer :root
