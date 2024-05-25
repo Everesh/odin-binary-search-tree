@@ -32,3 +32,7 @@ tree.postorder { |node| puts node.val }
 p tree.postorder
 
 p tree.height
+p tree.height(tree.find(98))
+
+p tree.depth
+p tree.depth(tree.find(98))
