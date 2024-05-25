@@ -100,6 +100,16 @@ class BinarySeachTree
     [left_height, right_height].max + 1
   end
 
+  def depth(node = root)
+    runner = root
+    depth = 0
+    until runner == node
+      depth += 1
+      runner = runner.val > node.val ? runner.left : runner.right
+    end
+    depth
+  end
+
   private
 
   attr_writer :root
