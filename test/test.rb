@@ -30,3 +30,5 @@ p tree.inorder
 
 tree.postorder { |node| puts node.val }
 p tree.postorder
+
+p tree.height
