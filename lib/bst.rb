@@ -1,6 +1,9 @@
 require_relative 'node'
+require_relative 'printer'
 
 class BinarySeachTree
+  include Printer
+
   attr_reader :root
 
   def initialize(arr)
