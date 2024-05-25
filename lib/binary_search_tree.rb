@@ -119,6 +119,10 @@ class BinarySeachTree
     (left_height - right_height).abs <= 1 && balanced?(node.left) && balanced?(node.right)
   end
 
+  def rebalance
+    self.root = build_tree(inorder)
+  end
+
   private
 
   attr_writer :root
