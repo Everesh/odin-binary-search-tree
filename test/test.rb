@@ -18,3 +18,6 @@ p tree.find(30)
 p tree.find(98)
 p tree.find(404)
 p tree.find(1)
+
+tree.level_order { |node| puts node.val }
+p tree.level_order
