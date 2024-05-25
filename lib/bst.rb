@@ -7,7 +7,7 @@ class BinarySeachTree
   attr_reader :root
 
   def initialize(arr)
-    @root = build_tree(arr)
+    @root = build_tree(arr.sort.uniq)
   end
 
   private
