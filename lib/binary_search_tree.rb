@@ -10,6 +10,16 @@ class BinarySeachTree
     @root = build_tree(arr.sort.uniq)
   end
 
+  def insert(val, node = root)
+    return self.root = Node.new(val) if root.nil?
+
+    if val < node.val
+      node.left.nil? ? node.left = Node.new(val) : insert(val, node.left)
+    elsif val > node.val
+      node.right.nil? ? node.right = Node.new(val) : insert(val, node.right)
+    end
+  end
+
   private
 
   attr_writer :root
