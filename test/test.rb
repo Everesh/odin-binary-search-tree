@@ -21,3 +21,12 @@ p tree.find(1)
 
 tree.level_order { |node| puts node.val }
 p tree.level_order
+
+tree.preorder { |node| puts node.val }
+p tree.preorder
+
+tree.inorder { |node| puts node.val }
+p tree.inorder
+
+tree.postorder { |node| puts node.val }
+p tree.postorder
