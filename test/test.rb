@@ -43,3 +43,6 @@ tree.insert(0)
 tree.insert(-1)
 tree.print
 p tree.balanced?
+tree.rebalance
+tree.print
+p tree.balanced?
