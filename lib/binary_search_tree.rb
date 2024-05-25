@@ -52,6 +52,18 @@ class BinarySeachTree
     nil
   end
 
+  def level_order
+    queue = [root]
+    vals = []
+    until queue.empty?
+      node = queue.shift
+      block_given? ? yield(node) : vals << node.val
+      queue << node.left unless node.left.nil?
+      queue << node.right unless node.right.nil?
+    end
+    vals unless block_given?
+  end
+
   private
 
   attr_writer :root
