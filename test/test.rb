@@ -36,3 +36,10 @@ p tree.height(tree.find(98))
 
 p tree.depth
 p tree.depth(tree.find(98))
+
+tree.print
+p tree.balanced?
+tree.insert(0)
+tree.insert(-1)
+tree.print
+p tree.balanced?
