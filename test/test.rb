@@ -7,3 +7,9 @@ tree.insert(50000)
 tree.print
 tree.insert(30)
 tree.print
+
+
+tree.delete(50000)
+tree.print
+tree.delete(20)
+tree.print
