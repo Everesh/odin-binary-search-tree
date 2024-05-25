@@ -42,6 +42,16 @@ class BinarySeachTree
     node
   end
 
+  def find(val)
+    node = root
+    until node.nil?
+      return node if node.val == val
+
+      node = val > node.val ? node.right : node.left
+    end
+    nil
+  end
+
   private
 
   attr_writer :root
