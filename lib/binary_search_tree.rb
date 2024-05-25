@@ -64,6 +64,33 @@ class BinarySeachTree
     vals unless block_given?
   end
 
+  def preorder(node = root, vals = [], &block)
+    return vals if node.nil?
+
+    block_given? ? yield(node) : vals << node.val
+    preorder(node.left, vals, &block)
+    preorder(node.right, vals, &block)
+    vals unless block_given?
+  end
+
+  def inorder(node = root, vals = [], &block)
+    return vals if node.nil?
+
+    inorder(node.left, vals, &block)
+    block_given? ? yield(node) : vals << node.val
+    inorder(node.right, vals, &block)
+    vals unless block_given?
+  end
+
+  def postorder(node = root, vals = [], &block)
+    return vals if node.nil?
+
+    postorder(node.left, vals, &block)
+    postorder(node.right, vals, &block)
+    block_given? ? yield(node) : vals << node.val
+    vals unless block_given?
+  end
+
   private
 
   attr_writer :root
